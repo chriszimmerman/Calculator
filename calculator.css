@@ -1,0 +1,37 @@
+.calculator-button {
+    font-size: 20px;
+    background-color: orange;
+    color: white;
+    height: 30px;
+    width: 40px;
+    margin: 5px;
+}
+
+.operator-button {
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 40px;
+    margin: 5px;
+}
+
+.highlighted-operator-button {
+    font-size: 20px;
+    background-color: #90ee90;
+    color: white;
+    height: 30px;
+    width: 40px;
+    margin: 5px;
+}
+
+#display {
+    height: 30px;
+    width: 195px;
+    margin: 5px;
+    color: black;
+    background-color: #add8e6;
+    resize: none;
+    font-size: 28px;
+    text-align: right;
+}

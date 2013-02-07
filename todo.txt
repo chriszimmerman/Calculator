@@ -1,0 +1,12 @@
+Todo
+Basic arithmetic (addition, subtraction, multiplication, division)
+Show numbers/results in display
+
+
+User stories
+-Enter numbers into calculator - DONE
+-Apply operations to numbers
+-Display the result
+
+Nice-to-haves
+-Map keys to button events (e.g. '+' key acts like pressing the plus button)
