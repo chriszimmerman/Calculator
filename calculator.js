@@ -22,6 +22,9 @@ function initCalculator(){
             if(this.display.textContent === '0'){
                 this.set(number);
             }
+            else if(this.lastButtonClicked === 'operator'){
+                this.set(number);
+            }
             else{
                 this.set(this.display.textContent + number);
             }
@@ -35,10 +38,10 @@ function initCalculator(){
             }
         },
 
-        plus: function(){
+        setOperator: function(operator){
             this.operand = this.display.textContent;
-            this.operator = '+';
-            this.set('');
+            this.operator = operator;
+            this.lastButtonClicked = 'operator';
         },
 
         equal: function(){
@@ -46,7 +49,12 @@ function initCalculator(){
                 this.operand = this.display.textContent;
             }
             else {
-                this.set((Number(this.operand) + Number(this.display.textContent)).toString());
+                if(this.operator === '+'){
+                    this.set((Number(this.operand) + Number(this.display.textContent)).toString());
+                }
+                else if (this.operator === '-'){
+                    this.set((Number(this.operand) - Number(this.display.textContent)).toString());
+                }
                 this.operand = null;
                 this.operator = null;
                 this.lastButtonClicked = null;

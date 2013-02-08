@@ -34,6 +34,21 @@ test("clicking a number button sets the lastButtonPressed to number", function()
     deepEqual('number', calculator.lastButtonClicked);
 });
 
+//TODO: this test
+/*test("clicking a number button sets the display to that number if last button pressed was equal", function(){
+
+});*/
+
+test("addDigit will set the display to the number entered if the last button pressed was an operator", function(){
+    var initialDisplayText = '420';
+    calculator.display.textContent = initialDisplayText;
+    calculator.setOperator('+');
+    deepEqual(initialDisplayText, calculator.display.textContent);
+    var digit = '3';
+    calculator.addDigit(digit);
+    deepEqual(digit, calculator.display.textContent);
+});
+
 test("addDecimal adds a decimal point to the number in the display", function(){
     var expectedDisplayText = '37.';
     calculator.display.textContent = '37';
@@ -71,10 +86,19 @@ test("equal without an operator sets display to itself and sets itself as operan
 test("plus operator", function(){
     var firstOperand = '592';
     calculator.set(firstOperand);
-    calculator.plus();
+    calculator.setOperator('+');
     deepEqual(firstOperand, calculator.operand, "plus operator sets the display as the first operator for the calculation");
-    deepEqual('', calculator.display.textContent, "plus operator clears out display");
     deepEqual('+', calculator.operator, "plus operator sets + as the operator for the calculation");
+    deepEqual('operator', calculator.lastButtonClicked);
+});
+
+test("minus operator", function(){
+    var firstOperand = '592';
+    calculator.set(firstOperand);
+    calculator.setOperator('-');
+    deepEqual(firstOperand, calculator.operand, "minus operator sets the display as the first operator for the calculation");
+    deepEqual('-', calculator.operator, "minus operator sets - as the operator for the calculation");
+    deepEqual('operator', calculator.lastButtonClicked);
 });
 
 test("equal operator performs plus calculation and clears calculator variables", function(){
@@ -90,4 +114,19 @@ test("equal operator performs plus calculation and clears calculator variables",
     deepEqual(calculator.operand, null);
     deepEqual(calculator.lastButtonClicked, null);
     deepEqual(calculator.display.textContent, '123');
+});
+
+test("subtraction", function(){
+    var firstOperand = 200;
+    var secondOperand = 27;
+    calculator.set(firstOperand);
+    calculator.setOperator('-');
+    calculator.set(secondOperand);
+    calculator.lastButtonClicked = '7';
+    calculator.equal();
+    deepEqual(calculator.operator, null);
+    deepEqual(calculator.operand, null);
+    deepEqual(calculator.lastButtonClicked, null);
+    deepEqual(calculator.display.textContent, '173');
+
 });
