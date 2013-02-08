@@ -19,10 +19,9 @@ function initCalculator(){
         },
 
         addDigit: function(number){
-            if(this.display.textContent === '0'){
-                this.set(number);
-            }
-            else if(this.lastButtonClicked === 'operator'){
+            if(this.display.textContent === '0'
+                || this.lastButtonClicked === 'operator'
+                || this.lastButtonClicked === 'equal'){
                 this.set(number);
             }
             else{
@@ -47,6 +46,7 @@ function initCalculator(){
         equal: function(){
             if(this.operator ===  null){
                 this.operand = this.display.textContent;
+                this.lastButtonClicked = 'equal';
             }
             else {
                 if(this.operator === '+'){
@@ -55,9 +55,15 @@ function initCalculator(){
                 else if (this.operator === '-'){
                     this.set((Number(this.operand) - Number(this.display.textContent)).toString());
                 }
+                else if (this.operator === '*'){
+                    this.set((Number(this.operand) * Number(this.display.textContent)).toString());
+                }
+                else if (this.operator === '/'){
+                    this.set((Number(this.operand) / Number(this.display.textContent)).toString());
+                }
                 this.operand = null;
                 this.operator = null;
-                this.lastButtonClicked = null;
+                this.lastButtonClicked = 'equal';
             }
         }
     };

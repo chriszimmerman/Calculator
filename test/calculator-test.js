@@ -34,10 +34,13 @@ test("clicking a number button sets the lastButtonPressed to number", function()
     deepEqual('number', calculator.lastButtonClicked);
 });
 
-//TODO: this test
-/*test("clicking a number button sets the display to that number if last button pressed was equal", function(){
-
-});*/
+test("clicking a number button sets the display to that number if last button pressed was equal", function(){
+    var expectedDisplayText = '3';
+    calculator.display.textContent = '29.042';
+    calculator.equal();
+    calculator.addDigit('3');
+    deepEqual(expectedDisplayText, calculator.display.textContent)
+});
 
 test("addDigit will set the display to the number entered if the last button pressed was an operator", function(){
     var initialDisplayText = '420';
@@ -112,7 +115,7 @@ test("equal operator performs plus calculation and clears calculator variables",
     calculator.equal();
     deepEqual(calculator.operator, null);
     deepEqual(calculator.operand, null);
-    deepEqual(calculator.lastButtonClicked, null);
+    deepEqual('equal', calculator.lastButtonClicked);
     deepEqual(calculator.display.textContent, '123');
 });
 
@@ -126,7 +129,35 @@ test("subtraction", function(){
     calculator.equal();
     deepEqual(calculator.operator, null);
     deepEqual(calculator.operand, null);
-    deepEqual(calculator.lastButtonClicked, null);
+    deepEqual('equal', calculator.lastButtonClicked);
     deepEqual(calculator.display.textContent, '173');
+});
 
+test("multiplication", function(){
+    var firstOperand = '23';
+    var secondOperand = '100';
+
+    calculator.operand = firstOperand;
+    calculator.operator = '*';
+    calculator.set(secondOperand);
+    calculator.lastButtonClicked = '0';
+    calculator.equal();
+    deepEqual(calculator.operator, null);
+    deepEqual(calculator.operand, null);
+    deepEqual('equal', calculator.lastButtonClicked);
+    deepEqual(calculator.display.textContent, '2300');
+});
+
+test("division", function(){
+    var firstOperand = 200;
+    var secondOperand = 5;
+    calculator.set(firstOperand);
+    calculator.setOperator('/');
+    calculator.set(secondOperand);
+    calculator.lastButtonClicked = '5';
+    calculator.equal();
+    deepEqual(calculator.operator, null);
+    deepEqual(calculator.operand, null);
+    deepEqual('equal', calculator.lastButtonClicked);
+    deepEqual(calculator.display.textContent, '40');
 });
