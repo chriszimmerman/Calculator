@@ -11,12 +11,7 @@ function initCalculator(){
             this.display.textContent = value;
         },
 
-        clear: function(){
-            this.set('0');
-            this.operand = null;
-            this.operator = null;
-            this.lastButtonClicked = null;
-
+        resetCalculatorButtons: function () {
             var addButton = document.getElementById('add');
             var subtractButton = document.getElementById('subtract');
             var multiplyButton = document.getElementById('multiply');
@@ -26,6 +21,14 @@ function initCalculator(){
             subtractButton.className = 'operator-button';
             multiplyButton.className = 'operator-button';
             divideButton.className = 'operator-button';
+        },
+
+        clear: function(){
+            this.set('0');
+            this.operand = null;
+            this.operator = null;
+            this.lastButtonClicked = null;
+            this.resetCalculatorButtons();
         },
 
         addDigit: function(number){
@@ -104,7 +107,6 @@ function initCalculator(){
                 }
                 else if (this.operator === '/'){
                     if(Number(display) === 0){
-                        //alert("Cannot divide by zero!");
                         this.set('0');
                     }
                     else{
@@ -115,16 +117,7 @@ function initCalculator(){
                 this.operator = null;
                 this.lastButtonClicked = 'equal';
             }
-
-            var addButton = document.getElementById('add');
-            var subtractButton = document.getElementById('subtract');
-            var multiplyButton = document.getElementById('multiply');
-            var divideButton = document.getElementById('divide');
-
-            addButton.className = 'operator-button';
-            subtractButton.className = 'operator-button';
-            multiplyButton.className = 'operator-button';
-            divideButton.className = 'operator-button';
+            this.resetCalculatorButtons();
         }
     };
 }

@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" name="Default" comment="Operator buttons get highlighted when clicked for an improved UI.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/lib/jasmine-1.3.1/MIT.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/SpecRunner.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/lib/jasmine-1.3.1/jasmine-html.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/lib/jasmine-1.3.1/jasmine.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/lib/jasmine-1.3.1/jasmine.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/calculator-test.js" afterPath="$PROJECT_DIR$/test/calculator-test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculator.css" afterPath="$PROJECT_DIR$/calculator.css" />
+    <list default="true" id="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculator.html" afterPath="$PROJECT_DIR$/calculator.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculator.js" afterPath="$PROJECT_DIR$/calculator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.html" afterPath="$PROJECT_DIR$/test/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Calculator.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361409812493" ignored="false" />
+    <file path="/Dummy.txt" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361409923985" ignored="false" />
     <file path="/calculator-test.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361409241321" ignored="false" />
     <file path="/calculator.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361408337189" ignored="false" />
     <file path="/calculator.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1360526127780" ignored="false" />
     <file path="/todo.txt" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361388273874" ignored="false" />
     <file path="/calculator.css" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361387772137" ignored="false" />
     <file path="/test.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361388092566" ignored="false" />
-    <file path="/fragment.js2" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361388653545" ignored="false" />
+    <file path="/fragment.js2" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361410735596" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,19 +74,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="calculator.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="calculator.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calculator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="449" selection-end="449" vertical-scroll-proportion="0.50549453">
+            <state line="61" column="66" selection-start="2185" selection-end="2185" vertical-scroll-proportion="-16.636364">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calculator-test.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="calculator-test.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/calculator-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="240" column="22" selection-start="9278" selection-end="9278" vertical-scroll-proportion="-4.3818183">
+            <state line="240" column="22" selection-start="9278" selection-end="9278" vertical-scroll-proportion="5.006954">
               <folding />
             </state>
           </provider>
@@ -130,7 +122,7 @@
       <file leaf-file-name="calculator.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calculator.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="122" selection-start="330" selection-end="330" vertical-scroll-proportion="-1.8333334">
+            <state line="25" column="61" selection-start="1360" selection-end="1360" vertical-scroll-proportion="-15.625">
               <folding />
             </state>
           </provider>
@@ -160,11 +152,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/calculator.html" />
         <option value="$PROJECT_DIR$/calculator.css" />
         <option value="$PROJECT_DIR$/test/test.html" />
         <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$PROJECT_DIR$/test/calculator-test.js" />
+        <option value="$PROJECT_DIR$/calculator.html" />
         <option value="$PROJECT_DIR$/calculator.js" />
       </list>
     </option>
@@ -400,7 +392,11 @@
       <created>1360341310581</created>
       <updated>1360341310581</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Operator buttons get highlighted when clicked for an improved UI.">
+      <created>1361409932301</created>
+      <updated>1361409932301</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -433,12 +429,12 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22596844" sideWeight="0.6708229" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22596844" sideWeight="0.6708229" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -585,13 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calculator.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="122" selection-start="330" selection-end="330" vertical-scroll-proportion="-1.8333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="22" selection-start="419" selection-end="419" vertical-scroll-proportion="-9.375">
@@ -599,16 +588,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/calculator-test.js">
+    <entry file="file://$PROJECT_DIR$/calculator.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="22" selection-start="9278" selection-end="9278" vertical-scroll-proportion="-4.3818183">
+        <state line="25" column="61" selection-start="1360" selection-end="1360" vertical-scroll-proportion="-15.625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/calculator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="449" selection-end="449" vertical-scroll-proportion="0.50549453">
+        <state line="61" column="66" selection-start="2185" selection-end="2185" vertical-scroll-proportion="-16.636364">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/calculator-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="240" column="22" selection-start="9278" selection-end="9278" vertical-scroll-proportion="5.006954">
           <folding />
         </state>
       </provider>
