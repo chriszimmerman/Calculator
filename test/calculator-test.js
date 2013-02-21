@@ -161,3 +161,111 @@ test("division", function(){
     deepEqual('equal', calculator.lastButtonClicked);
     deepEqual(calculator.display.textContent, '40');
 });
+
+test("do not allow dividing by zero", function(){
+    var firstOperand = 200;
+    var secondOperand = 0;
+    calculator.set(firstOperand);
+    calculator.setOperator('/');
+    calculator.set(secondOperand);
+    calculator.lastButtonClicked = '0';
+    calculator.equal();
+    deepEqual(calculator.operator, null);
+    deepEqual(calculator.operand, null);
+    deepEqual('equal', calculator.lastButtonClicked);
+    deepEqual(calculator.display.textContent, '0');
+});
+
+test("clicking on add button sets style to highlight it and unhighlights other operator buttons", function(){
+    var addButton = document.getElementById('add');
+    var subtractButton = document.getElementById('subtract');
+    var multiplyButton = document.getElementById('multiply');
+    var divideButton = document.getElementById('divide');
+
+    calculator.setOperator('+');
+
+    deepEqual('highlighted-operator-button', addButton.className);
+    deepEqual('operator-button', subtractButton.className);
+    deepEqual('operator-button', multiplyButton.className);
+    deepEqual('operator-button', divideButton.className);
+});
+
+test("clicking on subtract button sets style to highlight it and unhighlights other operator buttons", function(){
+    var addButton = document.getElementById('add');
+    var subtractButton = document.getElementById('subtract');
+    var multiplyButton = document.getElementById('multiply');
+    var divideButton = document.getElementById('divide');
+
+    calculator.setOperator('-');
+
+    deepEqual('operator-button', addButton.className);
+    deepEqual('highlighted-operator-button', subtractButton.className);
+    deepEqual('operator-button', multiplyButton.className);
+    deepEqual('operator-button', divideButton.className);
+});
+
+test("clicking on multiply button sets style to highlight it and unhighlights other operator buttons", function(){
+    var addButton = document.getElementById('add');
+    var subtractButton = document.getElementById('subtract');
+    var multiplyButton = document.getElementById('multiply');
+    var divideButton = document.getElementById('divide');
+
+    calculator.setOperator('*');
+
+    deepEqual('operator-button', addButton.className);
+    deepEqual('operator-button', subtractButton.className);
+    deepEqual('highlighted-operator-button', multiplyButton.className);
+    deepEqual('operator-button', divideButton.className);
+});
+
+test("clicking on divide button sets style to highlight it and unhighlights other operator buttons", function(){
+    var addButton = document.getElementById('add');
+    var subtractButton = document.getElementById('subtract');
+    var multiplyButton = document.getElementById('multiply');
+    var divideButton = document.getElementById('divide');
+
+    calculator.setOperator('/');
+
+    deepEqual('operator-button', addButton.className);
+    deepEqual('operator-button', subtractButton.className);
+    deepEqual('operator-button', multiplyButton.className);
+    deepEqual('highlighted-operator-button', divideButton.className);
+});
+
+test("equals button resets CSS on operator buttons", function(){
+    var addButton = document.getElementById('add');
+    var subtractButton = document.getElementById('subtract');
+    var multiplyButton = document.getElementById('multiply');
+    var divideButton = document.getElementById('divide');
+
+    addButton.className = 'highlighted-operator-button';
+    subtractButton.className = 'highlighted-operator-button';
+    multiplyButton.className = 'highlighted-operator-button';
+    divideButton.className = 'highlighted-operator-button';
+
+    calculator.equal();
+
+    deepEqual('operator-button', addButton.className);
+    deepEqual('operator-button', subtractButton.className);
+    deepEqual('operator-button', multiplyButton.className);
+    deepEqual('operator-button', divideButton.className);
+});
+
+test("clear button resets CSS on operator buttons", function(){
+    var addButton = document.getElementById('add');
+    var subtractButton = document.getElementById('subtract');
+    var multiplyButton = document.getElementById('multiply');
+    var divideButton = document.getElementById('divide');
+
+    addButton.className = 'highlighted-operator-button';
+    subtractButton.className = 'highlighted-operator-button';
+    multiplyButton.className = 'highlighted-operator-button';
+    divideButton.className = 'highlighted-operator-button';
+
+    calculator.clear();
+
+    deepEqual('operator-button', addButton.className);
+    deepEqual('operator-button', subtractButton.className);
+    deepEqual('operator-button', multiplyButton.className);
+    deepEqual('operator-button', divideButton.className);
+});

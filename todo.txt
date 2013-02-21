@@ -5,8 +5,12 @@ Show numbers/results in display
 
 User stories
 -Enter numbers into calculator - DONE
--Apply operations to numbers
--Display the result
+-Apply operations to numbers - DONE
+-Display the result - DONE
+-Error handling - DONE - divide by zero just returns zero. An alert informing them of div by zero would be annoying.
+-Fix weirdness with decimal button - DONE
+
 
 Nice-to-haves
 -Map keys to button events (e.g. '+' key acts like pressing the plus button)
+-Highlighting of operator button
