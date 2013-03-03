@@ -11,7 +11,7 @@ function initCalculator(){
             this.display.textContent = value;
         },
 
-        resetCalculatorButtons: function () {
+        resetButtonCSS: function () {
             var addButton = document.getElementById('add');
             var subtractButton = document.getElementById('subtract');
             var multiplyButton = document.getElementById('multiply');
@@ -28,10 +28,10 @@ function initCalculator(){
             this.operand = null;
             this.operator = null;
             this.lastButtonClicked = null;
-            this.resetCalculatorButtons();
+            this.resetButtonCSS();
         },
 
-        addDigit: function(number){
+        digitPress: function(number){
             if(this.display.textContent === '0'
                 || this.lastButtonClicked === 'operator'
                 || this.lastButtonClicked === 'equal'){
@@ -43,17 +43,50 @@ function initCalculator(){
             this.lastButtonClicked = 'number';
         },
 
-        addDecimal: function(){
+        decimalPress: function(){
+            if(this.lastButtonClicked === 'operator'){
+                this.set('0.');
+                this.lastButtonClicked = 'decimal';
+            }
             if(this.display.textContent.indexOf('.') === -1){
                 this.set(this.display.textContent + '.');
                 this.lastButtonClicked = 'decimal';
             }
         },
 
-        setOperator: function(operator){
-            this.operand = this.display.textContent;
+        operatorPress: function(operator){
+            var display = this.display.textContent;
+
+            if(this.operator != null && this.lastButtonClicked !== 'operator' && this.lastButtonClicked !== 'equal') {
+                if(this.operator === '+'){
+                    this.operand = (Number(this.operand) + Number(display)).toString();
+                    this.set(this.operand);
+                }
+                else if (this.operator === '-'){
+                    this.operand = (Number(this.operand) - Number(display)).toString();
+                    this.set(this.operand);
+                }
+                else if (this.operator === '*'){
+                    this.operand = (Number(this.operand) * Number(display)).toString();
+                    this.set(this.operand);
+                }
+                else if (this.operator === '/'){
+                    if(Number(display) === 0){
+                        this.set('0');
+                    }
+                    else{
+                        this.operand = (Number(this.operand) / Number(display)).toString();
+                        this.set(this.operand);
+                    }
+                }
+            }
+            else{
+                this.operand = display;
+            }
+
             this.operator = operator;
             this.lastButtonClicked = 'operator';
+
             function changeButtonCSS() {
                 var addButton = document.getElementById('add');
                 var subtractButton = document.getElementById('subtract');
@@ -93,31 +126,57 @@ function initCalculator(){
             var display = this.display.textContent;
             if(this.operator ===  null){
                 this.operand = display;
-                this.lastButtonClicked = 'equal';
             }
-            else {
+            else if(this.lastButtonClicked === 'equal'){
                 if(this.operator === '+'){
-                    this.set((Number(this.operand) + Number(display)).toString());
+                    this.set((Number(display) + Number(this.operand)).toString());
                 }
                 else if (this.operator === '-'){
-                    this.set((Number(this.operand) - Number(display)).toString());
+                    this.set((Number(display) - Number(this.operand)).toString());
                 }
                 else if (this.operator === '*'){
+                    this.set((Number(display) * Number(this.operand)).toString());
+                }
+                else if (this.operator === '/'){
+                    if(Number(this.operand) === 0){
+                        this.set('0');
+                    }
+                    else{
+                        this.set((Number(display) / Number(this.operand)).toString());
+                    }
+                }
+            }
+            else {
+                var temp;
+                if(this.operator === '+'){
+                    temp = display;
+                    this.set((Number(this.operand) + Number(display)).toString());
+                    this.operand = temp;
+                }
+                else if (this.operator === '-'){
+                    temp = display;
+                    this.set((Number(this.operand) - Number(display)).toString());
+                    this.operand = temp;
+                }
+                else if (this.operator === '*'){
+                    temp = display;
                     this.set((Number(this.operand) * Number(display)).toString());
+                    this.operand = temp;
                 }
                 else if (this.operator === '/'){
                     if(Number(display) === 0){
                         this.set('0');
+                        this.clear();
                     }
                     else{
+                        temp = display;
                         this.set((Number(this.operand) / Number(display)).toString());
+                        this.operand = temp;
                     }
                 }
-                this.operand = null;
-                this.operator = null;
-                this.lastButtonClicked = 'equal';
             }
-            this.resetCalculatorButtons();
+            this.lastButtonClicked = 'equal';
+            this.resetButtonCSS();
         }
     };
 }
