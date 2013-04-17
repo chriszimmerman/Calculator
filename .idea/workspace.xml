@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphcalc.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/graphcalc.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/calculator.css" afterPath="$PROJECT_DIR$/src/calculator.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/calculator.html" afterPath="$PROJECT_DIR$/src/calculator.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/calculator.js" afterPath="$PROJECT_DIR$/src/calculator.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/SpecRunner.html" afterPath="$PROJECT_DIR$/test/lib/jasmine-1.3.1/SpecRunner.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.html" afterPath="$PROJECT_DIR$/test/test.html" />
+    <list default="true" id="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" name="Default" comment="Started graphing calculator section. For this part, tests will be written in Jasmine, not QUnit.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphcalc.js" afterPath="$PROJECT_DIR$/src/graphcalc.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Calculator.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366063315360" ignored="false" />
+    <file path="/Dummy.txt" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366224656497" ignored="false" />
     <file path="/calculator-test.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1362352740329" ignored="false" />
     <file path="/calculator.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1362364476725" ignored="false" />
     <file path="/calculator.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1360526127780" ignored="false" />
@@ -22,9 +15,9 @@
     <file path="/calculator.css" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361387772137" ignored="false" />
     <file path="/test.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361388092566" ignored="false" />
     <file path="/fragment.js2" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361410735596" ignored="false" />
-    <file path="/graphcalc.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366220274532" ignored="false" />
+    <file path="/graphcalc.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366224558967" ignored="false" />
     <file path="/graphcalc.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1362012758733" ignored="false" />
-    <file path="/graphcalc-test.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366197596599" ignored="false" />
+    <file path="/graphcalc-test.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366224623234" ignored="false" />
     <file path="/SpecRunner.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1362594455037" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +82,7 @@
       <file leaf-file-name="graphcalc.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/graphcalc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="35" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.40592784">
+            <state line="99" column="9" selection-start="3813" selection-end="3813" vertical-scroll-proportion="0.748062">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -100,7 +93,7 @@
       <file leaf-file-name="graphcalc-test.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/graphcalc-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="7" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.0">
+            <state line="91" column="34" selection-start="3973" selection-end="3973" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -177,8 +170,8 @@
         <option value="$PROJECT_DIR$/test/SpecRunner.html" />
         <option value="$PROJECT_DIR$/graphcalc.js" />
         <option value="$PROJECT_DIR$/test/lib/jasmine-1.3.1/SpecRunner.html" />
-        <option value="$PROJECT_DIR$/test/graphcalc-test.js" />
         <option value="$PROJECT_DIR$/src/graphcalc.js" />
+        <option value="$PROJECT_DIR$/test/graphcalc-test.js" />
       </list>
     </option>
   </component>
@@ -277,28 +270,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Calculator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Calculator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jasmine-1.3.1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -484,7 +455,11 @@
       <created>1362353514702</created>
       <updated>1362353514702</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Started graphing calculator section. For this part, tests will be written in Jasmine, not QUnit.">
+      <created>1366220404777</created>
+      <updated>1366220404777</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -509,26 +484,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23672883" sideWeight="0.99750626" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23672883" sideWeight="0.99750626" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -575,7 +550,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Results of intermediate calculations now display&#10;Hitting equals will repeat the last calculation with the new result" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started graphing calculator section. For this part, tests will be written in Jasmine, not QUnit." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -594,6 +569,7 @@
     <MESSAGE value="Operator buttons get highlighted when clicked for an improved UI." />
     <MESSAGE value="Some cleanup" />
     <MESSAGE value="Results of intermediate calculations now display&#10;Hitting equals will repeat the last calculation with the new result" />
+    <MESSAGE value="Started graphing calculator section. For this part, tests will be written in Jasmine, not QUnit." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -664,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/lib/jasmine-1.3.1/jasmine.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/qunit.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -699,16 +668,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/lib/jasmine-1.3.1/jasmine.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/graphcalc-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="7" selection-start="1606" selection-end="1606" vertical-scroll-proportion="0.0">
+        <state line="91" column="34" selection-start="3973" selection-end="3973" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphcalc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="35" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.40592784">
+        <state line="99" column="9" selection-start="3813" selection-end="3813" vertical-scroll-proportion="0.748062">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

@@ -2,7 +2,10 @@
 
 var graphcalc = {
     parseExpression: function(input){
-        var getNextElementFromExpression = function(expression, start){
+        var isNull = function(o){return o === null;}
+        var isString = function(o){return typeof o === "string"};
+
+        var getNextElementFromExpressionString = function(expression, start){
           var currentPosition = start;
           var elementToInspect = expression[start];
 
@@ -17,20 +20,20 @@ var graphcalc = {
           }
         };
 
-        var root = null;
+        var tree = null;
 
         var i = 0;
         while(i < input.length){
-            var current = getNextElementFromExpression(input, i);
+            var current = getNextElementFromExpressionString(input, i);
             var insertElementIntoTree = function(current, root){
                 if(!isNaN(current)){
-                    if(root === null) {
+                    if(isNull(root)) {
                         root = new Tree(Number(current));
                     }
-                    else if(root.left === null){
+                    else if(isNull(root.left)){
                         root.left = new Tree(Number(current));
                     }
-                    else if(root.right === null){
+                    else if(isNull(root.right)){
                         root.right = new Tree(Number(current));
                     }
                     else{
@@ -38,7 +41,7 @@ var graphcalc = {
                     }
                 }
                 else{
-                    if(root === null){
+                    if(isNull(root)){
                         root = new Tree(String(current));
                     }
                     if(typeof root.node === "number"){
@@ -46,29 +49,47 @@ var graphcalc = {
                         temp.left = root;
                         root = temp;
                     }
-                    else if (typeof root.node === "string"){
-                        if((current === '*' || current === '/') && (root.node === '+' || root.node === '-')){
-                            var temp = new Tree(String(current));
-                            temp.left = root.right;
-                            root.right = temp;
+                    else if (isString(root.node)){
+                        var isNewElementHigherPrecedence = function(newElement, rootElement){
+                            var getPrecedence =  function(operator){
+                                if(operator === '^'){
+                                    return 3;
+                                }
+                                else if(operator === '*' || operator === '/'){
+                                    return 2;
+                                }
+                                return 1;
+                            };
+                            return getPrecedence(newElement) > getPrecedence(rootElement);
+                        };
+
+                        if(isNewElementHigherPrecedence(current, root.node)){
+                            var newNode = new Tree(String(current));
+                            if(isString(root.right.node)){
+                                root.right = insertElementIntoTree(current, root.right);
+                            }
+                            else{
+                                newNode.left = root.right;
+                                root.right = newNode;
+                            }
                         }
                         else{
-                            var temp = new Tree(String(current));
-                            temp.left = root;
-                            root = temp;
+                            var newNode = new Tree(String(current));
+                            newNode.left = root;
+                            root = newNode;
                         }
                     }
                 }
                 return root;
             };
 
-            root = insertElementIntoTree(current, root);
+            tree = insertElementIntoTree(current, tree);
             i = i + current.length;
         }
-        return root;
-    }
+        return tree;
+    },
 
-    /*evaluateTree: function evaluateTree(input){
+    evaluateTree: function evaluateTree(input){
         if(typeof(input.node) === "number"){
             return input.node;
         }
@@ -77,7 +98,7 @@ var graphcalc = {
                 return evaluateTree(input.left) + evaluateTree(input.right);
             }
         }
-    }*/
+    }
 };
 
 function Tree(n, left, right){
