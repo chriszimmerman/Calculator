@@ -94,8 +94,20 @@ var graphcalc = {
             return input.node;
         }
         else if(typeof(input.node) === "string"){
-            if(input.node.toString() === "+"){
+            if(input.node.toString() === '+'){
                 return evaluateTree(input.left) + evaluateTree(input.right);
+            }
+            else if(input.node.toString() === '-'){
+                return evaluateTree(input.left) - evaluateTree(input.right);
+            }
+            else if(input.node.toString() === '*'){
+                return evaluateTree(input.left) * evaluateTree(input.right);
+            }
+            else if(input.node.toString() === '/'){
+                return evaluateTree(input.left) / evaluateTree(input.right);
+            }
+            else if(input.node.toString() === '^'){
+                return Math.pow(evaluateTree(input.left), evaluateTree(input.right));
             }
         }
     }

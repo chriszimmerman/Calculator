@@ -91,4 +91,50 @@ describe("Evaluating expression trees", function(){
         result = graphcalc.evaluateTree(tree);
         expect(result).toEqual(7);
     });
+
+    it("Evaluates a simple subtraction expression", function(){
+        var tree = new Tree('-', new Tree(13), new Tree(2));
+        var result = graphcalc.evaluateTree(tree);
+        expect(result).toEqual(11);
+    });
+
+    it("Evaluates a simple multiplication expression", function(){
+        var tree = new Tree('*', new Tree(100), new Tree(2));
+        var result = graphcalc.evaluateTree(tree);
+        expect(result).toEqual(200);
+    });
+
+    it("Evaluates a simple dividing expression", function(){
+        var tree = new Tree('/', new Tree(100), new Tree(2));
+        var result = graphcalc.evaluateTree(tree);
+        expect(result).toEqual(50);
+    });
+
+    it("Evaluates a simple exponential expression", function(){
+        var tree = new Tree('^', new Tree(10), new Tree(2));
+        var result = graphcalc.evaluateTree(tree);
+        expect(result).toEqual(100);
+    });
+
+    it("Evaluates a complex addition expression", function(){
+        var tree = new Tree('+',
+                        new Tree('+',
+                            new Tree(3),
+                            new Tree(4)),
+                        new Tree(7));
+        var result = graphcalc.evaluateTree(tree);
+        expect(result).toEqual(14);
+    });
+
+    it("Evaluates a complex expression containing different operations", function(){
+        var tree =  new Tree('+',
+                         new Tree('*',
+                            new Tree(3),
+                            new Tree(2)),
+                         new Tree('/',
+                            new Tree(12),
+                            new Tree(6)));
+        var result = graphcalc.evaluateTree(tree);
+        expect(result).toEqual(8);
+    });
 });
