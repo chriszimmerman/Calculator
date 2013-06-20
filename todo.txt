@@ -8,6 +8,17 @@ User stories
    (e.g. with 3 + 5, hitting equals repeatedly will show 8, 13, 18, 23, etc.)  -D ONE
 -Show the results of intermediate calculations - DONE
 
+-Map key presses to buttons calculator
+-Display errors to user
+-Allow user to enter expressions containing the following operations:
+    - Addition, subtraction, multiplication, division
+    - Exponentials
+    - Parentheses
+    - Functions like sin, cos, tan, etc.
+
+-Allow user to enter single variable functions
+-Graph those functions
+
 
 Nice-to-haves
 -Map keys to button events (e.g. '+' key acts like pressing the plus button)

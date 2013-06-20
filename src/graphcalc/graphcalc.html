@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="graphcalc.css" type="text/css">
+    <script src="graphcalc.js" type="text/javascript"></script>
+    <script src="graphcalc-test.js" type="text/javascript"></script>
+    <title>Graphing Calculator</title>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td colspan="5"><textarea id="display" contenteditable="false" disabled="true" draggable="false"
+                                  readonly="true"></textarea></td>
+    </tr>
+    <tr>
+        <td>
+            <button id="1" class="calculator-button number-button" onclick="graphcalc.addSymbol('1')">1</button>
+        </td>
+        <td>
+            <button id="2" class="calculator-button number-button" onclick="graphcalc.addSymbol('2')">2</button>
+        </td>
+        <td>
+            <button id="3" class="calculator-button number-button" onclick="graphcalc.addSymbol('3')">3</button>
+        </td>
+        <td>
+            <button id="add" class="calculator-button operator-button" onclick="graphcalc.addSymbol('+')">+</button>
+        </td>
+        <td>
+            <button id="leftparen" class="calculator-button operator-button" onclick="graphcalc.addSymbol('(')">(
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="4" class="calculator-button number-button" onclick="graphcalc.addSymbol('4')">4</button>
+        </td>
+        <td>
+            <button id="5" class="calculator-button number-button" onclick="graphcalc.addSymbol('5')">5</button>
+        </td>
+        <td>
+            <button id="6" class="calculator-button number-button" onclick="graphcalc.addSymbol('6')">6</button>
+        </td>
+        <td>
+            <button id="subtract" class="calculator-button operator-button" onclick="graphcalc.addSymbol('-')">-
+            </button>
+        </td>
+        <td>
+            <button id="rightparen" class="calculator-button operator-button" onclick="graphcalc.addSymbol(')')">)
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="7" class="calculator-button number-button" onclick="graphcalc.addSymbol('7')">7</button>
+        </td>
+        <td>
+            <button id="8" class="calculator-button number-button" onclick="graphcalc.addSymbol('8')">8</button>
+        </td>
+        <td>
+            <button id="9" class="calculator-button number-button" onclick="graphcalc.addSymbol('9')">9</button>
+        </td>
+        <td>
+            <button id="multiply" class="calculator-button operator-button" onclick="graphcalc.addSymbol('*')">*
+            </button>
+        </td>
+        <td>
+            <button id="exponent" class="calculator-button operator-button" onclick="graphcalc.addSymbol('^')">^
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="0" class="calculator-button number-button" onclick="graphcalc.addSymbol('0')">0</button>
+        </td>
+        <td>
+            <button id="decimal" class="calculator-button decimal-button" onclick="graphcalc.addSymbol('.')">.</button>
+        </td>
+        <td>
+            <button id="equals" class="calculator-button equals-button" onclick="graphcalc.calculate()">=</button>
+        </td>
+        </td>
+        <td>
+            <button id="divide" class="calculator-button operator-button" onclick="graphcalc.addSymbol('/')">/</button>
+        </td>
+        <td>
+            <button id="variable" class="calculator-button variable-button" onclick="graphcalc.addSymbol('X')">X
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button id="clear" class="calculator-button clear-button" onclick="graphcalc.clear()">C</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<input id="expression" type="text">
+<input type="button" onclick="graphcalc.calculate()">
+<label id="result"></label>
+</body>
+</html>

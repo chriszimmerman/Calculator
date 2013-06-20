@@ -1,0 +1,46 @@
+.calculator-button {
+    font-size: 20px;
+    color: white;
+    height: 30px;
+    width: 40px;
+    margin: 5px;
+}
+
+.number-button {
+    background-color: orange;
+}
+
+.operator-button {
+    background-color: lightseagreen;
+}
+
+.highlighted-operator-button {
+    background-color: green;
+}
+
+.decimal-button {
+    background-color: brown;
+}
+
+.equals-button {
+    background-color: blue;
+}
+
+.clear-button {
+    background-color: red;
+}
+
+.variable-button {
+    background-color: black;
+}
+
+#display {
+    height: 30px;
+    width: 250px;
+    margin: 5px;
+    color: black;
+    background-color: #add8e6;
+    resize: none;
+    font-size: 28px;
+    text-align: right;
+}
