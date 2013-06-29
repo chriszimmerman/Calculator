@@ -82,6 +82,12 @@ describe("Parsing expression into RPN", function () {
         var result = [7, 3, 7, '*', '+'];
         expect(graphcalc.rpnParse(expression, 7)).toEqual(result);
     });
+
+    it("Parses a negative number", function(){
+        var expression = "(-3)";
+        var result = [0,3,'-'];
+        expect(graphcalc.rpnParse(expression)).toEqual(result);
+    });
 });
 
 describe("Evaluating RPN expressions", function () {

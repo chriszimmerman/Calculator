@@ -40,9 +40,13 @@ var graphcalc = {
 
         var xValue = 1;
         if (variableValue !== undefined) {
+            if(variableValue < 0){
+                variableValue = "("+ variableValue +")";
+            }
             xValue = variableValue;
         }
         input = input.replace(/X/g, xValue);
+        input = input.replace(/\(\-/g, "(0-");
 
         var outputQueue = [];
         var operatorStack = [];
@@ -83,7 +87,6 @@ var graphcalc = {
                     else
                         return 0;
                 };
-
                 if (isLesserPrecedence()) {
                     while (isLesserPrecedence()) {
                         var operator = operatorStack.pop();
