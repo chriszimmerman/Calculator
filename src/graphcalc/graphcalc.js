@@ -18,48 +18,32 @@ var graphcalc = {
     },
 
     rpnParse: function (input, variableValue) {
-        var getNextElementFromExpressionString = function (expression, start) {
-            var currentPosition = start;
-            var elementToInspect = expression[start];
-
-            if (elementToInspect !== '.' && isNaN(elementToInspect)) {
-                return elementToInspect;
-            }
-            else {
-                while (expression[currentPosition] === '.' || !isNaN(expression[currentPosition])) {
-                    currentPosition++;
-                }
-
-                var result = expression.substring(start, currentPosition);
-                if (!result.match(/^\d+\.?\d*$/)) {
-                    throw new Error("Number contains multiple decimals")
-                }
-                return result;
-            }
-        };
-
         var xValue = 1;
+
         if (variableValue !== undefined) {
             if(variableValue < 0){
-                variableValue = "("+ variableValue +")";
+                variableValue = "( "+ variableValue +" )";
             }
             xValue = variableValue;
         }
         input = input.replace(/X/g, xValue);
-        input = input.replace(/\(\-/g, "(0-");
+        input = input.replace(/\-\(/g, "negative (");
+        input = input.replace(/sin\(/g, "sin (");
+        input = input.replace(/cos\(/g, "cos (");
+        input = input.replace(/tan\(/g, "tan (");
+
+        var delimitedExpression = input.split(/\s+/g);
 
         var outputQueue = [];
         var operatorStack = [];
 
-        var i = 0;
-
-        while (i < input.length) {
-            var current = getNextElementFromExpressionString(input, i);
+        for (var i = 0; i < delimitedExpression.length; i++) {
+            var current = delimitedExpression[i];
 
             if (!isNaN(current)) {
                 outputQueue.push(Number(current));
             }
-            else if (current === '(') {
+            else if (current === '(' || current === 'negative' || current === 'sin' || current === 'cos' || current === 'tan') {
                 operatorStack.push(current);
             }
             else if (current === ')') {
@@ -70,6 +54,10 @@ var graphcalc = {
                     outputQueue.push(operatorStack.pop());
                 }
                 operatorStack.pop();
+
+                if(operatorStack[operatorStack.length - 1] === 'negative'){
+                    outputQueue.push(operatorStack.pop());
+                }
             }
             else if (current === '+' || current === '-' || current === '*' || current === '/' || current === '^') {
                 function isLesserPrecedence() {
@@ -95,8 +83,6 @@ var graphcalc = {
                 }
                 operatorStack.push(current);
             }
-
-            i = i + current.length;
         }
 
         while (operatorStack.length > 0) {
@@ -135,9 +121,24 @@ var graphcalc = {
                     operandStack.push(Math.pow(arg1, arg2));
                 }
             }
+            else if (current === 'negative'){
+                var arg = operandStack.pop();
+                operandStack.push(arg * -1);
+            }
+            else if (current === 'sin'){
+                var arg = operandStack.pop();
+                operandStack.push(Math.sin(arg));
+            }
+            else if (current === 'cos'){
+                var arg = operandStack.pop();
+                operandStack.push(Math.cos(arg));
+            }
+            else if (current === 'tan'){
+                var arg = operandStack.pop();
+                operandStack.push(Math.tan(arg));
+            }
         }
 
         return operandStack[0];
     }
 };
-

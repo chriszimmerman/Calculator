@@ -20,6 +20,10 @@ User stories
 -Graph those functions
 
 
+Technical debt
+- Test adding numbers to display
+- Test clear
+
 Nice-to-haves
 -Map keys to button events (e.g. '+' key acts like pressing the plus button)
 -Highlighting of operator button - DONE
