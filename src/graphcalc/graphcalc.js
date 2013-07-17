@@ -26,7 +26,9 @@ var graphcalc = {
             }
             xValue = variableValue;
         }
+
         input = input.replace(/X/g, xValue);
+        input = input.replace(/x/g, xValue);
         input = input.replace(/\-\(/g, "negative (");
         input = input.replace(/sin\(/g, "sin (");
         input = input.replace(/cos\(/g, "cos (");
@@ -55,7 +57,8 @@ var graphcalc = {
                 }
                 operatorStack.pop();
 
-                if(operatorStack[operatorStack.length - 1] === 'negative'){
+                if(operatorStack[operatorStack.length - 1] === 'negative' || operatorStack[operatorStack.length - 1] === 'sin'
+                    || operatorStack[operatorStack.length - 1] === 'cos' || operatorStack[operatorStack.length - 1] === 'tan'){
                     outputQueue.push(operatorStack.pop());
                 }
             }

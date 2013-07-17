@@ -107,9 +107,21 @@ describe("Parsing expression into RPN", function () {
         expect(graphcalc.rpnParse(expression, 0)).toEqual(result);
     });
 
+    it("Parses an expression containing nested sine functions", function () {
+        var expression = "sin( sin( X ) + 3 )";
+        var result = [0, 'sin', 3, '+', 'sin'];
+        expect(graphcalc.rpnParse(expression, 0)).toEqual(result);
+    });
+
     it("Parses an expression containing the cosine function", function () {
         var expression = "cos( X + 2 )";
         var result = [1, 2, '+', 'cos'];
+        expect(graphcalc.rpnParse(expression, 1)).toEqual(result);
+    });
+
+    it("Parses an expression containing nested cosine functions", function () {
+        var expression = "cos( 3 + cos( X ) / 3 )";
+        var result = [3, 1, 'cos', 3, '/', '+', 'cos'];
         expect(graphcalc.rpnParse(expression, 1)).toEqual(result);
     });
 
@@ -117,6 +129,18 @@ describe("Parsing expression into RPN", function () {
         var expression = "7 - tan( X )";
         var result = [7, 3, 'tan', '-'];
         expect(graphcalc.rpnParse(expression, 3)).toEqual(result);
+    });
+
+    it("Parses an expression containing nested tangent functions", function () {
+        var expression = "tan( 3 + tan( X ) / 3 )";
+        var result = [3, 1, 'tan', 3, '/', '+', 'tan'];
+        expect(graphcalc.rpnParse(expression, 1)).toEqual(result);
+    });
+
+    it("Accepts lowercase 'X' as a valid variable", function () {
+        var expression = "x + X";
+        var result = [1, 1, '+'];
+        expect(graphcalc.rpnParse(expression, 1)).toEqual(result);
     });
 });
 
