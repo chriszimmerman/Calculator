@@ -7,22 +7,51 @@ var graphcalc = {
     },
 
     clear: function () {
-        document.getElementById("display").textContent = "";
-        document.getElementById("result").textContent = "";
+        document.getElementById("display").clear();
+        document.getElementById("chartdiv").clear();
     },
 
-    calculate: function () {
+    graph: function () {
         var expression = document.getElementById("display").value;
-        var result = document.getElementById("result");
-        result.textContent = this.rpnEval(this.rpnParse(expression)).toString();
+        var scale = 0.1;
+        var minValue = -5;
+        var maxValue = 5;
+        var points = this.calculate(expression, minValue, maxValue, scale);
+        this.plot(expression, points);
+    },
+
+    calculate: function (expression, minValue, maxValue, scale) {
+        var points = [[]];
+
+        for (var i = minValue; i <= maxValue; i += scale) {
+            points[0].push([i, this.rpnEval(this.rpnParse(expression, i))]);
+        }
+
+        return points;
+    },
+
+    plot: function (expression, points){
+        $.jqplot('chartdiv', points,
+            { title: "y = " +expression,
+                axes: {yaxis: {renderer: $.jqplot.LogAxisRenderer}},
+                series: [
+                    {color: '#333333'},
+                    {showMarker:false},
+                ],
+                seriesDefaults: {
+                    markerOptions: {
+                        show: false
+                    }
+                }
+            });
     },
 
     rpnParse: function (input, variableValue) {
-        var xValue = 1;
+        var xValue = 1 ;
 
         if (variableValue !== undefined) {
-            if(variableValue < 0){
-                variableValue = "( "+ variableValue +" )";
+            if (variableValue < 0) {
+                variableValue = "( " + variableValue + " )";
             }
             xValue = variableValue;
         }
@@ -30,6 +59,7 @@ var graphcalc = {
         input = input.replace(/X/g, xValue);
         input = input.replace(/x/g, xValue);
         input = input.replace(/\-\(/g, "negative (");
+        input = input.replace(/\be\b/g, Math.E);
         input = input.replace(/sin\(/g, "sin (");
         input = input.replace(/cos\(/g, "cos (");
         input = input.replace(/tan\(/g, "tan (");
@@ -57,8 +87,14 @@ var graphcalc = {
                 }
                 operatorStack.pop();
 
-                if(operatorStack[operatorStack.length - 1] === 'negative' || operatorStack[operatorStack.length - 1] === 'sin'
-                    || operatorStack[operatorStack.length - 1] === 'cos' || operatorStack[operatorStack.length - 1] === 'tan'){
+                var isFunction = function(potentialFn){
+                    return potentialFn === 'negative'
+                        || potentialFn === 'sin'
+                        || potentialFn === 'cos'
+                        || potentialFn === 'tan';
+                };
+
+                if (isFunction(operatorStack[operatorStack.length - 1])) {
                     outputQueue.push(operatorStack.pop());
                 }
             }
@@ -124,19 +160,19 @@ var graphcalc = {
                     operandStack.push(Math.pow(arg1, arg2));
                 }
             }
-            else if (current === 'negative'){
+            else if (current === 'negative') {
                 var arg = operandStack.pop();
                 operandStack.push(arg * -1);
             }
-            else if (current === 'sin'){
+            else if (current === 'sin') {
                 var arg = operandStack.pop();
                 operandStack.push(Math.sin(arg));
             }
-            else if (current === 'cos'){
+            else if (current === 'cos') {
                 var arg = operandStack.pop();
                 operandStack.push(Math.cos(arg));
             }
-            else if (current === 'tan'){
+            else if (current === 'tan') {
                 var arg = operandStack.pop();
                 operandStack.push(Math.tan(arg));
             }

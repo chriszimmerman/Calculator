@@ -142,6 +142,12 @@ describe("Parsing expression into RPN", function () {
         var result = [1, 1, '+'];
         expect(graphcalc.rpnParse(expression, 1)).toEqual(result);
     });
+
+    it("Parses an expression containing the e function", function () {
+        var expression = "e * 5 + 7";
+        var result = [Math.E, 5, '*', 7, '+'];
+        expect(graphcalc.rpnParse(expression, 0.6)).toEqual(result);
+    });
 });
 
 describe("Evaluating RPN expressions", function () {
@@ -202,6 +208,12 @@ describe("Evaluating RPN expressions", function () {
     it("Evaluates an expression containing a sin function", function () {
         var expression = [1, 'tan', 5, '+'];
         var result = 6.557407724654903;
+        expect(graphcalc.rpnEval(expression)).toEqual(result);
+    });
+
+    it("Evaluates an expression containing e", function () {
+        var expression = [Math.E, 5, '+'];
+        var result = Math.E + 5;
         expect(graphcalc.rpnEval(expression)).toEqual(result);
     });
 });

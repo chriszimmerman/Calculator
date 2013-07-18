@@ -1,22 +1,35 @@
-User stories
+Calculator User stories
+
 -Enter numbers into calculator - DONE
 -Apply operations to numbers - DONE
 -Display the result - DONE
 -Error handling - DONE - divide by zero just returns zero. An alert informing them of div by zero would be annoying.
 -Fix weirdness with decimal button - DONE
 -Clicking the equals button right after clicking equals will repeat the last operation with the new result
-   (e.g. with 3 + 5, hitting equals repeatedly will show 8, 13, 18, 23, etc.)  -D ONE
+   (e.g. with 3 + 5, hitting equals repeatedly will show 8, 13, 18, 23, etc.)  -DONE
 -Show the results of intermediate calculations - DONE
 
 -Map key presses to buttons calculator
 -Display errors to user
--Allow user to enter expressions containing the following operations:
-    - Addition, subtraction, multiplication, division
-    - Exponentials
-    - Parentheses
-    - Functions like sin, cos, tan, etc.
 
--Allow user to enter single variable functions
+
+
+
+Graphing calculator user stories
+-Allow user to enter expressions containing the following operations:
+    - Addition, subtraction, multiplication, division - DONE
+    - Exponentials - DONE
+    - Parentheses - DONE
+    - Functions
+        -sin - DONE
+        -cos - DONE
+        -tan - DONE
+        -e
+        -asin
+        -acos
+        -atan
+
+-Allow user to enter single variable functions - DONE
 -Graph those functions
 
 
@@ -28,3 +41,9 @@ Nice-to-haves
 -Map keys to button events (e.g. '+' key acts like pressing the plus button)
 -Highlighting of operator button - DONE
 -Mobile version of calculator
+
+
+UI
+-add scale, min start, and max start controls on UI
+-add more buttons for more calculations (sin, cos, tan, e, etc.)
+-add plot zooming - can do this with JQPlot
