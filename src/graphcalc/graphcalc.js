@@ -3,15 +3,21 @@
 var graphcalc = {
     addSymbol: function (symbolOnButton) {
         var displayArea = document.getElementById("display");
-        displayArea.textContent = displayArea.value + symbolOnButton;
+        displayArea.value = displayArea.value + symbolOnButton;
     },
 
     clear: function () {
-        document.getElementById("display").clear();
-        document.getElementById("chartdiv").clear();
+        document.getElementById("display").value = "";
+        this.clearChart()
+    },
+
+    clearChart: function() {
+        var chart = document.getElementById("chartdiv");
+        chart.innerHTML = "";
     },
 
     graph: function () {
+        this.clearChart();
         var expression = document.getElementById("display").value;
         var scale = 0.1;
         var minValue = -5;
@@ -31,7 +37,7 @@ var graphcalc = {
     },
 
     plot: function (expression, points){
-        $.jqplot('chartdiv', points,
+        var graph = $.jqplot('chartdiv', points,
             { title: "y = " +expression,
                 axes: {yaxis: {renderer: $.jqplot.LogAxisRenderer}},
                 series: [
@@ -42,8 +48,14 @@ var graphcalc = {
                     markerOptions: {
                         show: false
                     }
+                },
+                cursor:{
+                    show: true,
+                    zoom:true,
+                    showTooltip:false
                 }
             });
+        $('.button-reset').click(function() { graph.resetZoom() });
     },
 
     rpnParse: function (input, variableValue) {
