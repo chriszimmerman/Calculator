@@ -20,8 +20,8 @@ var graphcalc = {
         this.clearChart();
         var expression = document.getElementById("display").value;
         var scale = 0.1;
-        var minValue = -5;
-        var maxValue = 5;
+        var minValue = parseInt(document.getElementById("minValue").value);
+        var maxValue = parseInt(document.getElementById("maxValue").value);
         var points = this.calculate(expression, minValue, maxValue, scale);
         this.plot(expression, points);
     },
