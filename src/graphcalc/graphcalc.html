@@ -6,8 +6,10 @@
             src="/Users/zimmy/IdeaProjects/Calculator/lib/jqplot/jquery.min.js"></script>
     <script language="javascript" type="text/javascript"
             src="/Users/zimmy/IdeaProjects/Calculator/lib/jqplot/jquery.jqplot.min.js"></script>
-    <script type="text/javascript" src="/Users/zimmy/IdeaProjects/Calculator/lib/jqplot/plugins/jqplot.cursor.min.js"></script>
-    <script type="text/javascript" src="/Users/zimmy/IdeaProjects/Calculator/lib/jqplot/plugins/jqplot.dateAxisRenderer.min.js"></script>
+    <script type="text/javascript"
+            src="/Users/zimmy/IdeaProjects/Calculator/lib/jqplot/plugins/jqplot.cursor.min.js"></script>
+    <script type="text/javascript"
+            src="/Users/zimmy/IdeaProjects/Calculator/lib/jqplot/plugins/jqplot.dateAxisRenderer.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/Users/zimmy/IdeaProjects/Calculator/lib/jqplot/jquery.jqplot.css"/>
     <script src="graphcalc.js" type="text/javascript"></script>
     <title>Graphing Calculator</title>
@@ -105,8 +107,7 @@
                         </button>
                     </td>
                     <td>
-                        <button id="equals" class="calculator-button equals-button" onclick="graphcalc.graph()">=
-                        </button>
+
                     </td>
                     </td>
                     <td>
@@ -122,13 +123,36 @@
                 </tr>
                 <tr>
                     <td>
+                        <button id="sin" class="calculator-button function-button"
+                                onclick="graphcalc.addSymbol('sin(')">sin
+                        </button>
+                    </td>
+
+                    <td>
+                        <button id="cos" class="calculator-button function-button"
+                                onclick="graphcalc.addSymbol('cos(')">cos
+                        </button>
+                    </td>
+
+                    <td>
+                        <button id="tan" class="calculator-button function-button"
+                                onclick="graphcalc.addSymbol('tan(')">tan
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <button id="clear" class="calculator-button clear-button" onclick="graphcalc.clear()">C</button>
+                    </td>
+                    <td>
+                        <button id="equals" class="calculator-button equals-button" onclick="graphcalc.graph()">=
+                        </button>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">From:</td>
                     <td colspan="3">
-                       <input type="number" id="minValue" value="-100">
+                        <input type="number" id="minValue" value="-100">
                     </td>
                 </tr>
                 <tr>

@@ -226,3 +226,20 @@ describe("Error handling", function () {
         }).toThrow(new Error("Mismatched parentheses"));
     });
 });
+
+describe("Calculate", function () {
+    it("Returns an array of points given an expression, minimum value, maximum value, and increment", function () {
+        var expression = "x * x";
+        var min = -1;
+        var max = 1;
+        var scale = 1;
+
+        graphcalc.rpnParse = jasmine.createSpy("rpnParse spy");
+        graphcalc.rpnEval = jasmine.createSpy("rpnEval spy").andCallFake(function(){return 1;});
+        var points = graphcalc.calculate(expression, min, max, scale);
+        expect(graphcalc.rpnParse).toHaveBeenCalled();
+        expect(graphcalc.rpnEval).toHaveBeenCalled();
+
+        expect(points).toContain([[-1,1], [0, 1], [1,1]]);
+    });
+});

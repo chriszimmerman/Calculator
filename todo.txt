@@ -32,6 +32,15 @@ Graphing calculator user stories
 -Allow user to enter single variable functions - DONE
 -Graph those functions
 
+Function buttons on UI
+    -sin
+    -cos
+    -tan
+    -e
+    -asin
+    -acos
+    -atan
+
 
 Technical debt
 - Test adding numbers to display

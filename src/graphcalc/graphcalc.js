@@ -19,7 +19,7 @@ var graphcalc = {
     graph: function () {
         this.clearChart();
         var expression = document.getElementById("display").value;
-        var scale = 0.1;
+        var scale = 0.05;
         var minValue = parseInt(document.getElementById("minValue").value);
         var maxValue = parseInt(document.getElementById("maxValue").value);
         var points = this.calculate(expression, minValue, maxValue, scale);
@@ -42,7 +42,7 @@ var graphcalc = {
                 axes: {yaxis: {renderer: $.jqplot.LogAxisRenderer}},
                 series: [
                     {color: '#333333'},
-                    {showMarker:false},
+                    {showMarker:false}
                 ],
                 seriesDefaults: {
                     markerOptions: {
@@ -192,4 +192,14 @@ var graphcalc = {
 
         return operandStack[0];
     }
+};
+
+var Foo = function(){
+    this.qux = function(){
+        this.bar();
+    };
+
+    this.bar = function(){
+        var x = 3 + 7;
+    };
 };
