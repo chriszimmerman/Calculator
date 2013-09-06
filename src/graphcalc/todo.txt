@@ -1,1 +1,3 @@
 Allow user to graph single-variable functions
+
+I am dumb. Should I have just been using eval?
