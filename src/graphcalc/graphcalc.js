@@ -69,7 +69,7 @@ var graphcalc = {
         for (var i = 0; i < input.length; i++) {
             if (!isNaN(input[i])) {
                 var currentOffset = 1;
-                while (!isNaN(input[i + currentOffset])) {
+                while (!isNaN(input[i + currentOffset]) || input[i+currentOffset] === '.') {
                     currentOffset++;
                 }
 
@@ -81,7 +81,7 @@ var graphcalc = {
             else {
                 var current = input[i];
                 function isLesserPrecedence() {
-                    return (/*current !== '^' &&*/ precedence(current) === precedence(operatorStack[operatorStack.length - 1]))
+                    return (current !== '^' && precedence(current) === precedence(operatorStack[operatorStack.length - 1]))
                         || precedence(current) < precedence(operatorStack[operatorStack.length - 1]);
                 };
 
@@ -90,8 +90,8 @@ var graphcalc = {
                         return 1;
                     else if (op === '*' || op === '/')
                         return 2;
-                    /*else if (op === '^')
-                        return 3;*/
+                    else if (op === '^')
+                        return 3;
                     else
                         return 0;
                 };

@@ -8,7 +8,7 @@
     </list>
     <ignored path="Calculator.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1380801180824" ignored="false" />
+    <file path="/Dummy.txt" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1380884901291" ignored="false" />
     <file path="/calculator-test.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1362352740329" ignored="false" />
     <file path="/calculator.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1372459648595" ignored="false" />
     <file path="/calculator.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1360526127780" ignored="false" />
@@ -16,7 +16,7 @@
     <file path="/calculator.css" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361387772137" ignored="false" />
     <file path="/test.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1361388092566" ignored="false" />
     <file path="/fragment.js2" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1371078616695" ignored="false" />
-    <file path="/graphcalc.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1380837230379" ignored="false" />
+    <file path="/graphcalc.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1380885304429" ignored="false" />
     <file path="/graphcalc.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1376243316515" ignored="false" />
     <file path="/graphcalc-test.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366303222643" ignored="false" />
     <file path="/SpecRunner.html" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366802744449" ignored="false" />
@@ -24,7 +24,7 @@
     <file path="/foo.txt" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366828407104" ignored="false" />
     <file path="/data_structure_test.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366827551714" ignored="false" />
     <file path="/data_structures.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1366826869746" ignored="false" />
-    <file path="/graphcalc_test.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1380837343146" ignored="false" />
+    <file path="/graphcalc_test.js" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1380884963105" ignored="false" />
     <file path="/graphcalc.css" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1376243042533" ignored="false" />
     <file path="/testtext.txt" changelist="1d2fd60b-12a4-4381-9f7b-9db15a4d841e" time="1373663047214" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,7 +41,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -78,6 +77,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -99,7 +99,7 @@
       <file leaf-file-name="SpecRunner.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/lib/jasmine-1.3.1/SpecRunner.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="45" selection-start="907" selection-end="907" vertical-scroll-proportion="-13.541667">
+            <state line="29" column="46" selection-start="964" selection-end="964" vertical-scroll-proportion="-15.416667">
               <folding />
             </state>
           </provider>
@@ -108,7 +108,7 @@
       <file leaf-file-name="graphcalc_test.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/graphcalc_test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="41" selection-start="6703" selection-end="6718" vertical-scroll-proportion="0.0">
+            <state line="206" column="6" selection-start="8355" selection-end="8355" vertical-scroll-proportion="-6.352941">
               <folding />
             </state>
           </provider>
@@ -117,7 +117,7 @@
       <file leaf-file-name="graphcalc.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphcalc/graphcalc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="25" selection-start="6765" selection-end="6765" vertical-scroll-proportion="-14.541667">
+            <state line="144" column="50" selection-start="6470" selection-end="6470" vertical-scroll-proportion="-10.416667">
               <folding />
             </state>
           </provider>
@@ -126,7 +126,7 @@
       <file leaf-file-name="graphcalc.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/graphcalc/graphcalc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="35" selection-start="3080" selection-end="3080" vertical-scroll-proportion="0.6620776">
+            <state line="92" column="20" selection-start="3052" selection-end="3052" vertical-scroll-proportion="0.63829786">
               <folding />
             </state>
           </provider>
@@ -240,7 +240,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -347,20 +346,21 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="128" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="145" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="139" />
     <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="139" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="148" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="939" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="943" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="939" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="145" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="141" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -444,13 +444,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -470,6 +463,13 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <list size="0" />
@@ -694,16 +694,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/jqplot/jquery.jqplot.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="300" column="28" selection-start="10371" selection-end="10386" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="300" column="28" selection-start="10371" selection-end="10386" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/jqplot/examples/line-charts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="6" selection-start="3190" selection-end="3284" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="77" column="6" selection-start="3190" selection-end="3284" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/jqplot/jqPlotOptions.txt">
@@ -711,16 +707,12 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/jqplot/usage.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.632732">
-          <folding />
-        </state>
+        <state line="117" column="0" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.632732" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphcalc/graphcalc.css">
@@ -732,9 +724,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
@@ -746,28 +736,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/lib/jasmine-1.3.1/SpecRunner.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="45" selection-start="907" selection-end="907" vertical-scroll-proportion="-13.541667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/graphcalc_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="41" selection-start="6703" selection-end="6718" vertical-scroll-proportion="0.0">
+        <state line="29" column="46" selection-start="964" selection-end="964" vertical-scroll-proportion="-15.416667">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphcalc/graphcalc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="25" selection-start="6765" selection-end="6765" vertical-scroll-proportion="-14.541667">
+        <state line="144" column="50" selection-start="6470" selection-end="6470" vertical-scroll-proportion="-10.416667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/graphcalc_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="206" column="6" selection-start="8355" selection-end="8355" vertical-scroll-proportion="-6.352941">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphcalc/graphcalc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="35" selection-start="3080" selection-end="3080" vertical-scroll-proportion="0.6620776">
+        <state line="92" column="20" selection-start="3052" selection-end="3052" vertical-scroll-proportion="0.63829786">
           <folding />
         </state>
       </provider>
