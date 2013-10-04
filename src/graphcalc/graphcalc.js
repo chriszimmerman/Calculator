@@ -11,7 +11,7 @@ var graphcalc = {
         this.clearChart()
     },
 
-    clearChart: function() {
+    clearChart: function () {
         var chart = document.getElementById("chartdiv");
         chart.innerHTML = "";
     },
@@ -27,7 +27,9 @@ var graphcalc = {
     },
 
     calculate: function (expression, minValue, maxValue, scale) {
-        var points = [[]];
+        var points = [
+            []
+        ];
 
         for (var i = minValue; i <= maxValue; i += scale) {
             points[0].push([i, this.rpnEval(this.rpnParse(expression, i))]);
@@ -36,30 +38,83 @@ var graphcalc = {
         return points;
     },
 
-    plot: function (expression, points){
+    plot: function (expression, points) {
         var graph = $.jqplot('chartdiv', points,
-            { title: "y = " +expression,
+            { title: "y = " + expression,
                 axes: {yaxis: {renderer: $.jqplot.LogAxisRenderer}},
                 series: [
                     {color: '#333333'},
-                    {showMarker:false}
+                    {showMarker: false}
                 ],
                 seriesDefaults: {
                     markerOptions: {
                         show: false
                     }
                 },
-                cursor:{
+                cursor: {
                     show: true,
-                    zoom:true,
-                    showTooltip:false
+                    zoom: true,
+                    showTooltip: false
                 }
             });
-        $('.button-reset').click(function() { graph.resetZoom() });
+        $('.button-reset').click(function () {
+            graph.resetZoom()
+        });
+    },
+
+    rpnParseNoWhitespace: function (input) {
+        var operatorStack = [];
+        var outputQueue = [];
+
+        for (var i = 0; i < input.length; i++) {
+            if (!isNaN(input[i])) {
+                var currentOffset = 1;
+                while (!isNaN(input[i + currentOffset])) {
+                    currentOffset++;
+                }
+
+                var current = input.substr(i, currentOffset);
+
+                outputQueue.push(Number(current));
+                i = i + currentOffset - 1;
+            }
+            else {
+                var current = input[i];
+                function isLesserPrecedence() {
+                    return (/*current !== '^' &&*/ precedence(current) === precedence(operatorStack[operatorStack.length - 1]))
+                        || precedence(current) < precedence(operatorStack[operatorStack.length - 1]);
+                };
+
+                function precedence(op) {
+                    if (op === '+' || op === '-')
+                        return 1;
+                    else if (op === '*' || op === '/')
+                        return 2;
+                    /*else if (op === '^')
+                        return 3;*/
+                    else
+                        return 0;
+                };
+
+                if (isLesserPrecedence()) {
+                    while (isLesserPrecedence()) {
+                        var operator = operatorStack.pop();
+                        outputQueue.push(operator);
+                    }
+                }
+                operatorStack.push(current);
+            }
+        }
+
+        while (operatorStack.length > 0) {
+            outputQueue.push(operatorStack.pop());
+        }
+
+        return outputQueue;
     },
 
     rpnParse: function (input, variableValue) {
-        var xValue = 1 ;
+        var xValue = 1;
 
         if (variableValue !== undefined) {
             if (variableValue < 0) {
@@ -99,7 +154,7 @@ var graphcalc = {
                 }
                 operatorStack.pop();
 
-                var isFunction = function(potentialFn){
+                var isFunction = function (potentialFn) {
                     return potentialFn === 'negative'
                         || potentialFn === 'sin'
                         || potentialFn === 'cos'
@@ -126,6 +181,7 @@ var graphcalc = {
                     else
                         return 0;
                 };
+
                 if (isLesserPrecedence()) {
                     while (isLesserPrecedence()) {
                         var operator = operatorStack.pop();
@@ -192,14 +248,4 @@ var graphcalc = {
 
         return operandStack[0];
     }
-};
-
-var Foo = function(){
-    this.qux = function(){
-        this.bar();
-    };
-
-    this.bar = function(){
-        var x = 3 + 7;
-    };
 };

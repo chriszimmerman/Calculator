@@ -150,6 +150,32 @@ describe("Parsing expression into RPN", function () {
     });
 });
 
+describe("RPN parsing expressions with no whitespace", function () {
+    it("Parses a simple expression without whitespace", function () {
+        var expression = "1+2";
+        var result = [1, 2, '+'];
+        expect(graphcalc.rpnParseNoWhitespace(expression)).toEqual(result);
+    });
+
+    it("Parses a subtraction expression without whitespace", function () {
+        var expression = "2-5";
+        var result = [2, 5, '-'];
+        expect(graphcalc.rpnParseNoWhitespace(expression)).toEqual(result);
+    });
+
+    it("Parses an expression with numbers of varying lengths", function () {
+        var expression = "29067-22+1+4017";
+        var result = [29067, 22, '-', 1, '+', 4017, '+'];
+        expect(graphcalc.rpnParseNoWhitespace(expression)).toEqual(result);
+    });
+
+    it("Parses an expression with mixed operands", function(){
+        var expression = "3/2+7*5-3";
+        var result = [3, 2, '/', 7, 5, '*', '+', 3, '-'];
+        expect(graphcalc.rpnParseNoWhitespace(expression)).toEqual(result);
+    });
+});
+
 describe("Evaluating RPN expressions", function () {
     it("Evaluates a simple addition expression", function () {
         var expression = [2, 3, '+'];
@@ -235,11 +261,17 @@ describe("Calculate", function () {
         var scale = 1;
 
         graphcalc.rpnParse = jasmine.createSpy("rpnParse spy");
-        graphcalc.rpnEval = jasmine.createSpy("rpnEval spy").andCallFake(function(){return 1;});
+        graphcalc.rpnEval = jasmine.createSpy("rpnEval spy").andCallFake(function () {
+            return 1;
+        });
         var points = graphcalc.calculate(expression, min, max, scale);
         expect(graphcalc.rpnParse).toHaveBeenCalled();
         expect(graphcalc.rpnEval).toHaveBeenCalled();
 
-        expect(points).toContain([[-1,1], [0, 1], [1,1]]);
+        expect(points).toContain([
+            [-1, 1],
+            [0, 1],
+            [1, 1]
+        ]);
     });
 });
